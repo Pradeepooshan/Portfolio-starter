@@ -43,4 +43,9 @@
 
 .cards {
     flex: 1;
+    position: relative;
+}
+
+.cards>*{
+    position: absolute;
 }
