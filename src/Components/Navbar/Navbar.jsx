@@ -1,21 +1,24 @@
 import React from 'react'
 import './Navbar.css'
+import Toggle from '../Toggle/Toggle'
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
+        <BrowserRouter>
         <div className='n-wrapper'>
             <div className="n-left">
                 <div className="n-name">Pradeep</div>
-                <span className="toggle">Toggle</span>
+                <Toggle />
             </div>
             <div className="n-right">
                 <div className="n-list">
                     <ul className="list">
                         <li className="li">Home</li>
-                        <li className="li">Services</li>
-                        <li className="li">Experience</li>
-                        <li className="li">Portfolio</li>
-                        <li className="li">Testimonials</li>
+                        <li className="li" to='/services'>Services</li>
+                        <li className="li" to='/experience'>Experience</li>
+                        <li className="li" to='/portfolio'>Portfolio</li>
+                        <li className="li" to='/testimonials'>Testimonials</li>
                     </ul>
                 </div>
                 <div className="">
@@ -23,6 +26,7 @@ const Navbar = () => {
                 </div>
             </div>
         </div>
+        </BrowserRouter>
     )
 }
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Services.css'
 import Card from '../Card/Card'
 
@@ -6,14 +6,19 @@ import Heartemoji from '../../img/heartemoji.png'
 import Glasses from '../../img/glasses.png'
 import Humble from '../../img/humble.png'
 import Resume from './pradeepooshan s s.pdf'
+import { themeContext } from '../../Context'
 
 const Services = () => {
+
+  const theme = useContext(themeContext)
+  const darkMode = theme.state.darkMode
+
   return (
     <div className='services'>
       <div className="awesom">
-        <span className="">My Awesome</span>
+        <span className="" style={{ color: darkMode ? 'white' : '' }}>My Awesome</span>
         <span className="">services</span>
-        <span className="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet et, corrupti quisquam facilis corporis maiores nemo non in itaque eaque, officiis quidem libero eos dolorum similique beatae necessitatibus eligendi sed.</span>
+        <span className="" style={{ color: darkMode ? 'white' : '' }}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet et, corrupti quisquam facilis corporis maiores nemo non in itaque eaque, officiis quidem libero eos dolorum similique beatae necessitatibus eligendi sed.</span>
         <a href={Resume} download>
           <button className="button s-button">Download CV</button>
         </a>
@@ -33,15 +38,15 @@ const Services = () => {
           <Card
             emoji={Glasses}
             heading={'Developer'}
-            detail={'Html, Css, Javascript, React js, Next js,'}
+            detail={'Html, Css, Javascript, React js, Next js'}
           />
         </div>
 
         <div className="" style={{ top: '19rem', left: '12rem' }}>
           <Card
             emoji={Humble}
-            heading={'UI/UX'}
-            detail={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet et, corrupti quisquam facilis corporis maiores'}
+            heading={'Achievements'}
+            detail={'1st price in web designing in "INTER COLLEGE MEET"'}
           />
         </div>
 
